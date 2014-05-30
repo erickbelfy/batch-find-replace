@@ -28,5 +28,10 @@ function onClearEntry(entry) {
 function clearEntry(input) {
   var name = input.split('<')[0];
   var email = input.split('<')[1];
-  return email + ' ' + name.trim().split(' ')[0] + ' ' +  name.trim().split(' ')[1];
+
+  if (name.trim().split(' ')[1] !== undefined) {
+    return email + ', ' + name.trim().split(' ')[0] + ', ' +  name.trim().split(' ')[1];
+  } else {
+    return email + ', ' + name.trim().split(' ')[0];
+  }
 }
